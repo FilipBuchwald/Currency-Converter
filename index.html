@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator walut</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/script.js"></script>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="body">
+    <header class="header">
+        <h1 class="header__text">Kalkulator walut</h1>
+    </header>
+    <main>
+        <form class="form js-form">
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Kalkulator</legend>
+                <p>
+                    <label>
+                        Kwota: <input class="form__field js-form__field" name="cash" type="number" min="1"
+                            placeholder="Wpisz kwotę" required autofocus>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Mam :
+                        <select class="form__selector js-form__selector1" name="selectCurrency1">
+                            <option value="PLN">PLN</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Chcę otrzymać:
+                        <select class="form__selector js-form__selector2" name="selectCurrency2">
+                            <option value="PLN">PLN</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <button class="form__button js-form__button">Przelicz</button>
+                </p>
+                <p>
+
+                    Po przewalutowaniu otrzymasz: <strong class="js-form__result"></strong>
+
+                </p>
+            </fieldset>
+        </form>
+    </main>
+    <footer class="footer">
+        <p>
+            Kurs walut z dnia 25.04.2021.
+        </p>
+    </footer>
+</body>
+
+</html>
