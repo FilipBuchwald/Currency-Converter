@@ -1,19 +1,16 @@
 {
 
-    const cashAmount = document.querySelector(".js-form__field");
     const currency1 = document.querySelector(".js-form__selector1");
     const currency2 = document.querySelector(".js-form__selector2");
     const formElement = document.querySelector(".js-form");
-    const resultElement = document.querySelector(".js-form__result")
     let priceEUR = 4.55;
     let priceUSD = 3.76;
     let priceGBP = 5.23;
     let pricePLN = 1;
 
-
     const calculateResult = (amount, currency1Type) => {
-
         const currency2Type = currency2.value;
+       
 
         switch (currency1Type) {
             case "PLN":
@@ -59,7 +56,8 @@
         }
     }
 
-    currency1.addEventListener("input", () => {
+    const selectCurrencyValue = () => {
+
         switch (currency1.value) {
             case "USD":
                 priceEUR = 0.83;
@@ -85,19 +83,31 @@
                 priceGBP = 5.23;
                 pricePLN = 1;
         }
-    });
+    }
 
-
-    formElement.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-
+    const updateResultText = () => {
+        const resultElement = document.querySelector(".js-form__result")
+        const cashAmount = document.querySelector(".js-form__field");
         const amount = +cashAmount.value;
         const currency1Type = currency1.value;
-
         const result = calculateResult(amount, currency1Type)
-
         resultElement.innerText = `${result.toFixed(2)} ${currency2.value}`;
+    }
+    
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+        updateResultText ();
 
-    });
+    }
+
+    
+
+    const init = () => {
+        currency1.addEventListener("input", selectCurrencyValue);
+        formElement.addEventListener("submit", onFormSubmit);
+
+
+    }
+
+    init ();
 }
