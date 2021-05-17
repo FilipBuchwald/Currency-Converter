@@ -13,4 +13,4 @@ A converter that allows you to convert currency such as PLN,USD,GBP and EUR base
 - ES6+
 
 ## Demo
-![Demo](https://filipbuchwald.github.io/Currency-Converter/)
+[Demo](https://filipbuchwald.github.io/Currency-Converter/)
